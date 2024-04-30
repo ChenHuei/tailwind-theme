@@ -19,19 +19,17 @@ export default function Home() {
 		<main className={`${theme} grid place-content-center min-h-screen p-2`}>
 			<div className="p-4 bg-black text-white invert">
 				<div className="mb-2">Theme:</div>
-				<div>
-					{['dark', 'light', 'red'].map((item) => (
-						<button
-							key={item}
-							className="bg-stone-700 rounded mr-4 py-2 px-4 transition-opacity hover:opacity-80"
-							onClick={() => {
-								localStorage.setItem('theme', item);
-								setTheme(item);
-							}}>
-							{item}
-						</button>
-					))}
-				</div>
+				{['dark', 'light', 'red'].map((item) => (
+					<button
+						key={item}
+						className="bg-stone-700 rounded mr-4 py-2 px-4 transition-opacity hover:opacity-80"
+						onClick={() => {
+							localStorage.setItem('theme', item);
+							setTheme(item);
+						}}>
+						{item}
+					</button>
+				))}
 			</div>
 			<Card />
 		</main>
